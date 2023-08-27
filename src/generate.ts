@@ -22,9 +22,7 @@ export const renderHtml = (fretboard: Note[][], highlight: number[][]) => {
       value.appendChild(document.createTextNode(note));
       value.style.cssText = 'border: 1px solid;text-align: center;';
 
-      if (j === 0) {
-        value.style.cssText += 'background-color: #a9a9a9;';
-      } else if (highlight[i][j] === 0) {
+      if (highlight[i][j] === 0) {
         value.style.cssText += 'background-color: #38761d;';
       } else if (highlight[i][j] === 1) {
         value.style.cssText += 'background-color: #6aa84f;';
@@ -32,6 +30,8 @@ export const renderHtml = (fretboard: Note[][], highlight: number[][]) => {
         value.style.cssText += 'background-color: #6aa84f;';
       } else if (highlight[i][j] === 3) {
         value.style.cssText += 'background-color: #ffe599;';
+      } else if (j === 0) {
+        value.style.cssText += 'background-color: #a9a9a9;';
       }
 
       row.appendChild(value);
