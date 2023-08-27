@@ -38,11 +38,12 @@ export const renderHtml = (fretboard: Note[][], highlight: number[][]) => {
     });
     table.appendChild(row);
   });
+
   const oldTable = document.getElementsByTagName('table');
-  console.log(oldTable);
+
   if (oldTable.length) {
-    //@ts-ignore
     oldTable[0].remove();
   }
+
   document.body.appendChild(table);
 };

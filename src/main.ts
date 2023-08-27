@@ -1,7 +1,7 @@
 import { generateChords } from './chords';
 import { generateFretboard } from './fretboard';
 import { renderHtml } from './generate';
-import { generateHighlight } from './hightlight';
+import { generateHighlightChord, generateHighlightScale } from './hightlight';
 import { Note } from './note';
 
 declare global {
@@ -32,10 +32,12 @@ export const main = () => {
     document.getElementById('string1').value as Note,
   ];
   const chordIndex = Number(document.getElementById('chord-index').value);
-
   const fretboard = generateFretboard(inputFretboard);
-  const chords = generateChords(inputScale);
-  const highlight = generateHighlight(fretboard, chords[chordIndex]);
+
+  const highlight =
+    chordIndex === -1
+      ? generateHighlightScale(fretboard, inputScale)
+      : generateHighlightChord(fretboard, generateChords(inputScale)[chordIndex]);
 
   renderHtml(fretboard, highlight);
 };
