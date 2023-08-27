@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "declaration": false,
+    "outDir": "./build",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noEmitOnError": false,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": false
+  }
+}
